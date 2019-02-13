@@ -1,0 +1,787 @@
+* {
+	user-select: none;
+	-webkit-user-select: none;
+}
+#loading {
+	position: relative;
+	width: 375px;
+	height: 100%;
+	z-index: 0;
+	margin: 0 auto;
+	background: #a90d0e;
+	overflow: hidden;
+}
+
+#loading .loading_bg_top {
+	width: 375px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+/*loading*/
+
+#loading .loading_txt {
+	position: absolute;
+	width: 220px;
+	top: 107px;
+	left: 0px;
+}
+
+#loading .loading_bg_bottom {
+	width: 375px;
+	position: absolute;
+	bottom: -15px;
+	left: 0;
+}
+
+#loading p {
+	position: absolute;
+	z-index: 10;
+	font-size: 25px;
+	color: #ffffff;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+#loading p span {
+	font-size: 25px;
+	color: #ffffff;
+}
+
+
+/*只能在移动端*/
+
+#tips {
+	background-color: #000000;
+	width: 100%;
+	height: 100%;
+	display: none
+}
+
+#tips .tips_box {
+	top: 50%;
+	position: absolute;
+	z-index: 100;
+	width: 100%;
+}
+
+#tips .tips_box div {
+	color: #ffffff;
+	text-align: center;
+	width: 100%;
+	font-size: 30px;
+	font-family: '黑体'
+}
+
+
+/* 游戏开始主界面 */
+
+#game_wrapper {
+	position: relative;
+	width: 375px;
+	height: 667px;
+	background-image: url(../images/bg_back.jpg);
+	background-repeat: no-repeat;
+	background-size: 375px 667px;
+	overflow: hidden;
+	z-index: 100;
+	display: none;
+}
+
+#game_wrapper .logo {
+	width: 375px;
+	height: 226px;
+	position: relative;
+	z-index: 10;
+}
+
+#game_wrapper .logo img {
+	position: absolute;
+	top: 17%;
+	left: 50%;
+	transform: translate(-50%, -17%);
+	width: 60%;
+	height: 60%;
+}
+
+
+/* 移动的图片 */
+
+#game_wrapper .inner {
+	width: 100%;
+}
+/*开始和结束跑道*/
+#again_paodao, #end_paodao {
+	position: absolute;
+	top: 53%;
+}
+#again_paodao img, #end_paodao img {
+	width: 375px;
+}
+
+#game_wrapper .inner_bg li img{
+	width: 375px;
+}
+#game_wrapper .inner_bg .paodao_bg1,
+#game_wrapper .inner_bg .paodao_bg2,
+#game_wrapper .inner_bg .paodao_bg1_clone,
+#game_wrapper .inner_bg .paodao_bg2_clone{
+	position: absolute;
+	top: 45%;
+	width: 100%;
+}
+#game_wrapper .inner_bg .paodao_bg1,
+#game_wrapper .inner_bg .paodao_bg1_clone{
+	top: 20%;
+}
+#game_wrapper #sky1,
+#game_wrapper #sky2{
+	position: absolute;
+	top: 15%;
+	width: 100%;
+}
+#game_wrapper .inner_bg .paodao_num{
+	position: absolute;
+	top: 30%;
+	width: 100%;
+}
+
+/*枕头*/
+#zhentou_wrapper {
+	position: absolute;
+	left: -24%;
+    top: -190px;
+	z-index: 40;
+}
+#zhentou_wrapper .zhentou1 {
+	position: relative;
+	left: 125px;
+    top: -37px;
+	width: 100px;
+	height: 50px;
+}
+#zhentou_wrapper .zhentou2 {
+	position: relative;
+	width: 175px;
+	height: 130px;
+	z-index: 10;
+}
+/*能量槽*/
+#engr {
+	width: 258px;
+	height: 25px;
+	border: 3px solid #5a2a00;
+	border-radius: 10px;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 153px;
+	line-height: 25px;
+	overflow: hidden;
+}
+#engr p {
+	margin-left: 38%;
+	color: #fff;
+	font-weight: bold;
+	font-size: 16px;
+}
+#engr img {
+	position: relative;
+	z-index: -10;
+	top: -25px;
+	left: 0;
+	width: 0%;
+    height: 100%;
+}
+/*能量槽数值*/
+#numPower{
+	color: #EBEB07;
+	font-size: 34px;
+	position: absolute;
+	bottom: 186px;
+    margin-left: 57px;
+}
+#info {
+	position: absolute;
+	left: 50%;
+	top: 35%;
+	transform: translate(-50%, -35%);
+	width: 190px;
+	height: 90px;
+}
+#info img{
+	width: 190px;
+	height: 90px;
+}
+
+/* 在玩一次，显示成绩 */
+#progress {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 375px;
+	height: 667px;
+	background: #000;
+    opacity: .8;
+	overflow: hidden;
+	z-index: 60;
+	text-align: center;
+	display: none;
+}
+#progress .result {
+	position: absolute;
+	left: 50%;
+	top: 30%;
+	transform: translate(-50%, -30%);
+	width: 340px;
+	height: 175px;
+	text-align: center;
+	z-index: 10;
+}
+#progress .result img{
+	width: 340px;
+	height: 175px;
+}
+#progress .result .num {
+	position: absolute;
+	top: 40%;
+}
+#progress .result .num span {
+	padding:0 50px;
+	color: #FDEE56;
+	font-size: 20px;
+	font-weight: bold;
+}
+#progress .result p {
+	position: absolute;
+	top: 60%;
+	font-size: 16px;
+	color: #fff;
+	padding: 0 20px;
+	line-height: 24px;
+}
+#progress .btn {
+	width: 375px;
+	margin: 0 auto;
+	position: absolute;
+	bottom: 30%;
+	z-index: 10;
+
+}
+#progress .btn img {
+	width: 110px;
+	height: 35px;
+}
+/* 抽奖页面 */
+
+#warp,#warp_win, #warp_product {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 375px;
+	height: 100%;
+	overflow: hidden;
+	margin: 0 auto;
+	background: url('../images/main_bg.jpg') no-repeat;
+	background-size: 100% 100%;
+	z-index: 70;
+	text-align: center;
+}
+#warp .logo, #warp_win .logo, #warp_product .logo{
+	position:absolute;
+	top: 64px;
+    left: 70px;
+    width: 250px;
+    height: 160px;
+}
+#warp .red_bag{
+	display:block;
+	width:320px;
+	height:400px;
+	position:absolute;
+	left: 6%;
+	top: 18%;
+	background:url('../images/red_bag.png') no-repeat;
+	background-size: 310px 400px;
+}
+#ball{
+	display:none;
+	position:absolute;
+	left:0px;
+	top:120px;
+	width:375px;
+	height:400px;
+}
+#warp p{
+	position: absolute;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#warp .red_logo{
+	width: 108px;
+	height: 22px;
+	position: absolute;
+	left: 50%;
+	top: 66%;
+	transform: translate(-50%,-42%);
+}
+/* 红包抽奖动画 */
+
+.animated {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+}
+.animated.redBag {
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
+}
+/* 点击红包的动画 */
+.scale {
+	animation-name: scale;
+}
+@keyframes scale {
+	from{
+		transform: scale(1);
+	}
+	5% {
+		transform: scale(0.9) rotate(-5deg);
+	}
+	15%,25%, 35%, 45%,55%,65%,75%,85%, 95% {
+  		transform: scale(1.1) rotate(5deg);
+	}
+	20%,30%, 40%, 50%,60%,70%,80%,90% {
+ 		 transform: scale(1.1) rotate(-5deg);
+	}
+}
+/* 红包的动画结束后显示ball动画 */
+.ball {
+	animation-name: ball;
+	animation-timing-function: linear;
+}
+@keyframes ball {
+	from{
+		transform: scale(1) ;
+	}
+	25%{
+		transform: scale(1.2) rotate(-90deg);
+	}
+	50%{
+		transform: scale(1.4) rotate(-180deg);
+	}
+	75%{
+		transform: scale(1.8) rotate(-270deg);
+	}
+	to{
+		transform: scale(2) rotate(-360deg);
+	}
+}
+/* 中奖界面 */
+#warp_win {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 375px;
+	height: 100%;
+	overflow: hidden;
+	margin: 0 auto;
+	background: url('../images/main_bg.jpg') no-repeat;
+	background-size: 100% 100%;
+	z-index: 70;
+	text-align: center;
+}
+#warp_win .gift {
+	position: absolute;
+	top: 20%;
+	width: 375px;
+	height: 350px;
+}
+#warp_win .con{
+	text-align:center;
+	font-size:16px;
+	line-height:30px;
+	color:#ffd977;
+}
+#warp_win .con span{
+	display:block;
+	height:42px;
+	color:#fff;
+	font-size: 14px;
+}
+#warp_win .con span b{
+	color:#ffd977;
+}
+
+#warp_win .img_adap{
+	height:200px;
+	text-align: center;
+	position: relative;
+}
+
+#warp_win .img_adap img{
+	position:absolute;
+	left: 50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+}
+/*无奖品页面特殊处理*/
+#wu_img_adap{
+	height:340px;
+}
+
+#wu_img_adap img{
+	position:absolute;
+	left: 50%;
+	top:auto;
+	bottom:-20px;
+	transform: translate(-50%,0);
+	-webkit-transform: translate(-50%,0);
+}
+
+#warp_win .tip{
+	position: absolute;
+	top: 64%;
+	width:375px;
+	margin:5px auto 0;
+	text-align: center;
+	color:#fff;
+	font-size:16px;
+}
+#warp_win .select_tip{
+	position:absolute;
+	width:440px;
+	font-size:24px;
+	color:#fff;
+	left:85px;
+	bottom:262px;
+}
+#warp_win .select_tip span{
+	display:inline-block;
+	font-size:18px;
+}
+#warp_win .button{
+	position:absolute;
+	top: 74%;
+	text-align: center;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#warp_win a{
+	display:inline-block;
+	width: 180px;
+    height: 40px;
+    background: none;
+    color: #f4e398;
+    border: 3px solid #f4e398;
+    text-align: center;
+    font: bold 20px/40px '宋体';
+}
+#warp_win a:active{
+	background: #f4e398;
+	color:#ac2113;
+}
+
+/*分享链接遮罩层*/
+#warp_win .share_mask{
+	position:fixed;
+	top:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.8);
+	z-index: 5;
+}
+#warp_win .share_bear{
+	position:absolute;
+	top: 90px;
+	width: 200px;
+	height: 300px;
+	left: 61%;
+	transform: translateX(-50%);
+}
+#warp_win .share_logo{
+	position:absolute;
+	bottom: 109px;
+    left: 39px;
+	width: 150px;
+	left: 50%;
+	transform: translateX(-50%);
+}
+#warp_product {
+	display: none;
+}
+#warp_product {
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 80;
+	width: 375px;
+	height: 100%;
+	overflow: hidden;
+	margin: 0 auto;
+	background: url('../images/main_bg.jpg') no-repeat;
+	background-size: 100% 100%;
+}
+#warp_product .big_pic{
+	position:absolute;
+	top:67px;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index:0;
+	width: 375px;
+	height: 380px;
+}
+#warp_product .btn{
+	position: absolute;
+	display:block;
+	height: 24px;
+    color: #fff;
+	padding: 10px;
+    line-height: 24px;
+    font-size: 14px;
+	text-align:center;
+	z-index: 90;
+}
+#warp_product .prev{
+	top:-94px;
+	left:18px;
+}
+#warp_product .next{
+	top:-94px;
+	right:18px;
+}
+/* 枕头产品 */
+#warp_product .show{
+	display: block;
+	position:absolute;
+	width:375px;
+	top:210px;
+	margin:0 auto;
+	left: 50%;
+	transform: translateX(-50%);
+	-webkit-transition:all .5s;
+	transition:all .5s;
+
+}
+#warp_product .show img {
+	width: 190px;
+	height: 100px;
+}
+#warp_product .show ul{
+	height:350px;
+	width:2560px;
+}
+
+#warp_product .show li{
+	height:153px;
+	top: 0;
+	position:absolute;
+	float:left;
+	text-align:center;
+	width:280px;
+	transform: translate(-50%, 0);
+	-webkit-transform: translate(-50%, 0);
+}
+#warp_product .show li img{
+	position:absolute;
+	pointer-events:auto;
+	left: 20%;
+}
+#warp_product .show h1{
+	width:231px;
+	text-align: center;
+	color:#fff;
+	font-size:14px;
+	position:absolute;
+	left: 50%;
+	top:106%;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+}
+#warp_product .select_tip{
+	position:absolute;
+	width:375px;
+	font-size:14px;
+	color:#fff;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom:180px;
+}
+#warp_product a{
+	display:inline-block;
+	position:absolute;
+	bottom:114px;
+	width: 120px;
+    height: 40px;
+    background: none;
+    color: #f4e398;
+    border: 2px solid #f4e398;
+    text-align: center;
+    font: bold 20px/40px '宋体';
+}
+#warp_product a:active{
+	background: #f4e398;
+	color:#ac2113;
+}
+#warp_product .back{left:50px;}
+#warp_product #submit{right:50px;}
+/*产品详细遮罩层*/
+#warp_product .mask{
+	position:fixed;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.5);
+	z-index: 5;
+}
+#warp_product .mask .intr{
+	position:absolute;
+	top:115px;
+	left:74px;
+	width:491px;
+	height:886px;
+	background: url('../images/se_bg.jpg') no-repeat;
+}
+#warp_product .intr .detail{
+	width:403px;
+	margin:0 auto;
+}
+
+#warp_product .intr .detail .product_icon{
+	position: absolute;
+    left: 351px;
+    top: 150px;
+}
+
+#warp_product h2{
+	text-align:center;
+	margin:120px auto 0;
+}
+#warp_product .pro_pic{
+	position: relative;
+	height:272px;
+	width: 403px;
+	text-align:center;
+}
+#warp_product .pro_pic img{
+	width:403px;
+	position: absolute;
+	left: 50%;
+	top:50%;
+	transform: translate(-50%,-50%);
+	-webkit-transform: translate(-50%,-50%);
+}
+#warp_product h3{
+	font-size: 25px;
+	color:#fff;
+	margin-bottom: 23px;
+}
+#warp_product .detail p{
+	font-size:20px;
+	color:#fff;
+	line-height: 30px;
+}
+#warp_product .close{
+	position: absolute;
+	bottom:80px;
+	width:222px;
+	height:60px;
+	border:3px solid #f4e398;
+	color:#f4e398;
+	font-size:32px;
+	background: none;
+    left:130px;
+}
+/*产品详情页面*/
+#product_detail{
+	display: none;
+	position:fixed;
+	top: 0;
+	left: 0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.5);
+	z-index: 100;
+}
+#product_detail .intr{
+	position: absolute;
+    top: 57px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 322px;
+    height: 546px;
+	background: url('../images/se_bg.jpg') no-repeat;
+	overflow: hidden;
+}
+#product_detail .intr .detail{
+	position: absolute;
+	left: -14%;
+	width:322px;
+	margin:0 auto;
+}
+
+#product_detail .intr .detail .product_icon{
+	position: absolute;
+	width: 60px;
+	height: 60px;
+    left: 299px;
+    top: 149px;
+}
+
+#product_detail h2{
+	text-align:center;
+	margin:120px auto 0;
+}
+#product_detail .pro_pic{
+	position: relative;
+	height:180px;
+	width: 322px;
+	text-align:center;
+}
+#product_detail .pro_pic img{
+	width:257px;
+	height: 150px;
+	position: absolute;
+	left: 63%;
+	top:50%;
+	transform: translate(-50%,-63%);
+	-webkit-transform: translate(-50%,-63%);
+}
+#product_detail h3{
+	position: absolute;
+	left: 36%;
+    top: 95%;
+	transform: translate(-36%,-90%);
+	font-size: 20px;
+	color:#fff;
+	margin-bottom: 23px;
+}
+#product_detail .detail p{
+	position: absolute;
+	font-size:12px;
+	color:#fff;
+	line-height: 14px;
+	left: 26%;
+}
+#product_detail .close{
+	position: absolute;
+	bottom:44px;
+	width:100px;
+	height:30px;
+	border:3px solid #f4e398;
+	color:#f4e398;
+	font-size:20px;
+	background: none;
+    left: 50%;
+    text-align: center;
+	transform: translateX(-50%);
+}
