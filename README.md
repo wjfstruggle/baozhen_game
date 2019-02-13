@@ -1,7 +1,7 @@
 # baozhen_game
 基于jq写的小游戏
 
-[在线演示]()
+[在线演示](https://struggle-wjf.gitee.io/shop_mobile/src/index.html)
 
 - 玩法：
 
