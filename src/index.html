@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/game.css" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+	</head>
+
+	<body>
+		<!--载入游戏的loading界面-->
+		<div id="loading">
+			<img class="loading_bg_top" src="">
+			<img class="loading_txt" src="">
+			<img class="loading_bg_bottom" src="">
+			<p>LOADING...&nbsp;&nbsp;&nbsp;&nbsp;<span id="loading_txt"></span></p>
+		</div>
+		<!--游戏中心-->
+		<div id="game_wrapper">
+			<div class="logo">
+				<img src="images/logo.png" alt="">
+			</div>
+			<!-- 滚动的图 -->
+			<ul class="inner_bg">
+				<!-- 开始跑到 跑道-->
+				<li class="paodao" id="again_paodao"><img src="images/begin_paodao_bg.png" /></li>
+				<!--结束跑道-->
+				<li style="" class="paodao" id="end_paodao"><img src="images/end_paodao_bg.png" /></li>
+				<!--星星跑道-->
+				<li class="item paodao_bg1"><img src="images/paodao_bg1.png" /></li>
+				<li class="item paodao_bg2"><img src="images/paodao_bg2.png" /></li>
+				<li class="item paodao_bg1_clone"><img src="images/paodao_bg2.png" /></li>
+				<li class="item paodao_bg2_clone"><img src="images/paodao_bg1.png" /></li>
+				<!--天空云朵跑道-->
+				<li class="item" id="sky1"><img src="images/sky_bg1.png" /></li>
+				<li class="item" id="sky2"><img src="images/sky_bg2.png" /></li>
+				<!--游戏中的距离跑到-->
+				<li style="" class="paodao_num paodao1" id="normal_paodao"><img src="images/pao1.png" /></li>
+				<li style="" class="paodao_num paodao2" id="normal_paodao"><img src="images/pao2.png" /></li>
+				<li style="" class="paodao_num paodao3" id="normal_paodao"><img src="images/pao3.png" /></li>
+				<li style="" class="paodao_num paodao4" id="normal_paodao"><img src="images/pao4.png" /></li>
+				<li style="" class="paodao_num paodao5" id="normal_paodao"><img src="images/pao5.png" /></li>
+				<li style="" class="paodao_num paodao6" id="normal_paodao"><img src="images/pao6.png" /></li>
+				<li style="" class="paodao_num paodao7" id="normal_paodao"><img src="images/pao7.png" /></li>
+				<li style="" class="paodao_num paodao8" id="normal_paodao"><img src="images/pao8.png" /></li>
+				<li style="" class="paodao_num paodao9" id="normal_paodao"><img src="images/pao9.png" /></li>
+				<li style="" class="paodao_num paodao10" id="normal_paodao"><img src="images/pao10.png" /></li>
+				<li style="" class="paodao_num paodao11" id="normal_paodao"><img src="images/pao11.png" /></li>
+				<li style="" class="paodao_num paodao12" id="normal_paodao"><img src="images/pao12.png" /></li>
+			</ul>
+			<div id="zhentou_wrapper">
+				<img class="zhentou1" src="images/zhentou2.png" alt="">
+				<img class="zhentou2" src="images/zhentou_bg.png" alt="">
+			</div>
+			<!-- 能量槽 -->
+			<div id="engr">
+				<p>POWER</p>
+				<img src="images/power.png" alt="">
+			</div>
+			<!--能量槽数值-->
+			<div id="numPower">
+				0
+			</div>
+			<!-- 提示 -->
+			<div id="info">
+				<!--提示一-->
+				<img class="tips1" style="display: none;" src="images/tips1.png" alt="">
+				<!--提示二-->
+				<img class="tips2" style="display: none;" src="images/tips2.png" alt="">
+			</div>
+			<!-- 在玩一次，显示成绩 -->
+			<div id="progress">
+				<!-- 结果 -->
+				<div class="result">
+					<img src="images/result_bg.jpg" alt="">
+					<!-- 分数 -->
+					<div class="num">
+						<span class="resent"></span>
+						<span class="history"></span>
+					</div>
+					<!-- 文本提示 -->
+					<p class="text">恭喜您抛出 <span class="hot_year"></span>光年，击败<span class="random"></span>的玩家 ! 并获得一次抽奖机会 ! !</p>
+				</div>
+				<!-- 按钮 -->
+				<div class="btn">
+					<!-- 在玩一次 -->
+					<img class="again" src="images/repeat_play_btn.png" alt="">
+					<!-- 抽奖按钮 -->
+					<img class="Lucky_draw" src="images/lottery_btn.png" alt="">
+				</div>
+			</div>
+			<!-- 抽奖界面 -->
+			<div id="warp" class="warp">
+				<img class="logo" src="images/logo.png" alt="">
+				<a id="red_bg" class="red_bag ">
+					<!-- 红包 -->
+				</a>
+				<img id="ball" src="images/ball.png" alt="">
+				<img src="images/red_logo.png" class="red_logo" />
+				<p>点击红包看看您会获得什么奖品吧</p>
+			</div>
+			<!-- 中奖界面 -->
+			<div id="warp_win" class="warp">
+				<img class="logo" src="images/logo.png" alt="">
+				<div class="gift" style="display:block">
+					<p class="con">恭喜您获得了［ 新春大奖 ］！<span>价值<b>rmb 2400元</b>   舒爽透气薄垫</span></p>
+					<div class="img_adap">
+						<img style="width: 300px" src="images/gift_te.png" alt="">
+						<!--  礼品图片 -->
+					</div>
+				</div>
+				<div class="gift" style="display:none">
+					<p class="con">恭喜您获得了［ 六等奖 ］！<span>天猫官方旗舰店<b>50元</b>无门槛优惠券</span></p>
+					<div class="img_adap">
+						<img src="images/gift6.png" alt="">
+						<!--  礼品图片 -->
+					</div>
+				</div>
+				<div class="gift" style="display:none">
+					<!--<p class="con">再接再励,不要放弃！<br/>大奖已经无限近了！</p>-->
+					<div class="img_adap" id="wu_img_adap">
+						<img src="images/gift_wu.png" alt="">
+						<!--  礼品图片 -->
+					</div>
+				</div>
+				<p class="tip">您今天还有<span id="num">2</span>次抽奖机会，<br/> 邀请好友参与可获得额外一次机会！</p>
+				<div class="button">
+					<a href="javascript:;" id="share">邀请好友</a>
+				</div>
+				<!-- START分享遮罩层 -->
+				<div class="share_mask" id="share_mask" style="display:none">
+					<img class="share_bear" src="images/share_bear.png" alt="">
+					<img class="share_logo" src="images/share_logo.png" alt="">
+				</div>
+				<!-- END遮罩层 -->
+			</div>
+			<!-- 轮播图界面 -->
+			<div id="warp_product">
+				<img class="logo" src="images/logo.png" alt="">
+				<img class="big_pic" src="images/banner2.png" alt="">
+				<!-- 此处循环枕头产品 -->
+				<div class="show" id="show">
+					<ul class="inner">
+						<li id="banner1">
+							<input type="hidden" name="pro_id">
+							<!-- 产品编号 -->
+							<img id="bannerImg1" src="images/zhentou1.png" alt="">
+							<!--  枕头图片 -->
+							<h1>泰迪枕</h1>
+							<!-- 枕头名字 -->
+						</li>
+						<li id="banner2">
+							<input type="hidden" name="pro_id">
+							<img id="bannerImg2" src="images/zhentou2.png" alt="">
+							<h1>典雅梦幻4D枕一代</h1>
+						</li>
+						<li id="banner3">
+							<input type="hidden" name="pro_id">
+							<img id="bannerImg3" src="images/zhentou3.png" alt="">
+							<h1>安琪儿枕</h1>
+						</li>
+						<li id="banner4">
+							<input type="hidden" name="pro_id">
+							<img id="bannerImg4" src="images/zhentou4.png" alt="">
+							<h1>4D太空智能枕</h1>
+						</li>
+					</ul>
+					<div class="prev btn leftBtn" id="prev">&lsaquo;&lsaquo;上一款</div>
+						<div class="next btn rightBtn" id="next">下一款&rsaquo;&rsaquo;</div>
+					</div>
+					<a href="javascript:;" class="back">返 回</a>
+					<a href="javascript:;" id="submit">确定选择</a>
+					<p class="select_tip">左右滑动来选择一款您最喜欢的产品参与游戏吧！
+					</p>
+				</div>
+			</div>
+			<!-- 产品详情页 -->
+			<div id="product_detail">
+				<div class="intr">
+					<div class="detail">
+						<img class="product_icon" src="images/product_icon1.png" />
+						<h2><img src="images/character.png" alt=""></h2>
+						<div class="pro_pic"><img src="images/zhentou1.png" alt=""></div>
+						<!-- 产品图片 -->
+						<h3></h3>
+						<p>
+						</p>
+					</div>
+					<a href="javascript:;" class="close">关 闭</a>
+				</div>
+			</div>
+			<div id="tips">
+				<div class="tips_box">
+					<div>
+						为了更好的体验游戏，请选择竖屏模式进行游戏
+					</div>
+				</div>
+			</div>
+			<script src="js/jquery-2.1.0.js"></script>
+			<!--预加载插件-->
+			<script src="js/preloadjs.min.js"></script>
+			<!--懒加载插件-->
+			<script src="js/jquery.lazyload.js"></script>
+			<!--轮播图-->
+			<script src="js/index.js"></script>
+			<!--滑动-->
+			<script src="js/slide.js"></script>
+
+			<script type="text/javascript">
+				$(function() {
+					// 枕头滑动
+					/*只能在移动端上进行游戏*/
+					var mfps = 45; //帧频
+					var dw = 640; //设计宽度
+					var dh = 1136; //设计高度
+
+					window.onresize = resizeTips;
+
+					function resizeTips() {
+						var ch = document.documentElement.clientHeight;
+						var cw = document.documentElement.clientWidth;
+						if(cw / ch > 1) {
+							document.getElementById("game_wrapper").style.display = "none";
+							document.getElementById("tips").style.display = "block";
+						} else {
+							document.getElementById("tips").style.display = "none";
+							document.getElementById("game_wrapper").style.display = "block";
+						}
+					}
+
+					document.body.style.height = window.innerHeight + "px";
+
+					/*动态改变根元素字体大小*/
+					function recalc() {
+						// 客户端的宽度
+						var clientWidth = document.documentElement.clientWidth;
+						if(!clientWidth) return;
+						document.documentElement.style.fontSize = 40 * (clientWidth / 750) + 'px';
+						// 字体大小   = 1个rem单位表示多少个像素（设备的宽度   /设计宽度）
+					}
+
+					function initRecalc() {
+						recalc();
+						// if(浏览器支持横竖屏切换的事件){横竖屏事件}else{ resize事件 }
+						var resizeEvt = 'osrientationchange' in window ? 'orientationchange' : 'resize';
+						if(!document.addEventListener) return;
+						window.addEventListener(resizeEvt, recalc, false);
+						document.addEventListener('DOMContentLoaded', recalc, false);
+					}
+
+					initRecalc();
+				})
+			</script>
+	</body>
+
+</html>
