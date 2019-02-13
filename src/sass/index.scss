@@ -1,0 +1,182 @@
+@charset "utf-8";
+
+@function r($px) {
+    @return ($px / 40) *1rem;
+}
+
+@function half($px) {
+    @return ($px / 2) *1px;
+}
+
+$width_375: r(750);
+$width_320: r(640);
+
+// loading加载画面
+#loading {
+    position: relative;
+    width: $width_375;
+    height: 100%;
+    z-index: 0;
+    margin: 0 auto;
+    background: #a90d0e;
+    overflow: hidden;
+    .loading_bg_top {
+        width: $width_375;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .loading_txt {
+        position: absolute;
+        width: r(376);
+        top: r(107);
+        left: 0px;
+    }
+    .loading_bg_bottom {
+        width: $width_375;
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+    }
+
+    p {
+        z-index: 10;
+        font-size: 25px;
+        color: #ffffff;
+        span {
+            font-size: 25px;
+            color: #ffffff;
+        }
+    }
+}
+// 游戏界面
+#game_wrapper {
+    position: relative;
+    width: $width_375;
+    height: 100%;
+    background-image: url('../images/bg_back.jpg');
+    background-repeat: no-repeat;
+    background-size: $width_375 100%;
+    overflow: hidden;
+    z-index: 100;
+    display: none;
+    .logo {
+        width: $width_375;
+        height: r(226*2);
+        position: relative;
+        z-index: 10;
+        img {
+            position: absolute;
+            top: 17%;
+            left: 50%;
+            transform: translate(-50%, -17%);
+            width: r(360);
+        }
+    }
+    // 背景和跑到
+    .inner_bg {
+        width: 100%;
+        li img {width: $width_375;}
+        .paodao {
+            position: absolute;
+            top: 52%;
+            width: $width_375;
+        }
+        .paodao_bg1,
+        .paodao_bg2,
+        .paodao_bg1_clone,
+        .paodao_bg2_clone{
+            position: absolute;
+            top: 45%;
+            width: 100%;
+        }
+        .paodao_bg1,
+        .paodao_bg1_clone {
+            top: 20%;
+        }
+        #sky1,#sky2 {
+            position: absolute;
+            top: 15%;
+        }
+    }
+    // 抱枕
+    #zhentou_wrapper {
+        position: relative;
+        left: 4%;
+        top: 15%;
+        width: r(360);
+        z-index: 40;
+        .zhentou1 {
+            position: absolute;
+            left: 14%;
+            top: 30%;
+            width: 100px;
+            height: 50px;
+        }
+        .zhentou2 {
+            width: 175px;
+            height: 130px;
+            z-index: 10;
+        }
+    }
+    // 能量槽
+    #engr {
+        width: r(513);
+        height: 25px;
+        border: 3px solid #5a2a00;
+        border-radius: 10px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -143px;
+        line-height: 25px;
+//      overflow: hidden; 
+        p {
+            position: absolute;
+            margin-left: 38%;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        img {
+            position: absolute;
+            z-index: -10;
+            left: 0;
+            width: 0%;
+            height: 100%;
+        }
+        #numPower{
+            color: #EBEB07;
+            font-size: 34px;
+            position: absolute;
+            top: -36px;
+            font-style: italic;
+        }
+    }
+}
+
+// 提示
+#tips {
+    background-color: #000000;
+    width: 100%;
+    height: 100%;
+    display: none;
+    .tips_box {
+        top: 50%;
+        position: absolute;
+        z-index: 100;
+        width: 100%;
+        div {
+            color: #ffffff;
+            text-align: center;
+            width: 100%;
+            font-size: 30px;
+            font-family: '黑体'
+        }
+    }
+}
+@media (max-width: 320px) {
+  #loading {
+      width: 320px;
+  }
+}
